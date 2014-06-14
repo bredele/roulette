@@ -7,7 +7,10 @@ module.exports = roulette;
 
 
 /**
- * roulette constructor.
+ * Switch two dom elements.
+ *
+ * @param {Element} el1
+ * @param {Element} el2
  * @api public
  */
 
