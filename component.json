@@ -1,0 +1,16 @@
+{
+  "name": "roulette",
+  "repo": "bredele/roulette",
+  "description": "switch dom elements position",
+  "version": "0.0.0",
+  "keywords": [],
+  "dependencies": {
+  },
+  "development": {
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
