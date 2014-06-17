@@ -15,14 +15,23 @@ module.exports = roulette;
  */
 
 function roulette(el1, el2) {
-	// dom is synchronous so it could be global
+	// NOTE: dom is synchronous so it could be global
 	var anchor = document.createElement('div');
-	el2.insertAdjacentElement('beforebegin', anchor);
-	el1.insertAdjacentElement('beforebegin', el2);
+	insert(el2, anchor);
+	insert(el1, el2);
+	insert(anchor, el1);
+	anchor.parentElement.removeChild(anchor);
+}
 
-	var parent = anchor.parentElement;
-	// use replace no?
-	// div.replace();
-	anchor.insertAdjacentElement('beforebegin', el1);
-	parent.removeChild(anchor);
+
+/**
+ * Insert adjacent html.
+ * 
+ * @param  {Element} parent
+ * @param  {Element} child
+ * @api private      
+ */
+
+function insert(parent, child) {
+	parent.insertAdjacentElement('beforebegin', child);
 }
