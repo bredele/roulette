@@ -7,6 +7,25 @@ module.exports = roulette;
 
 
 /**
+ * Switch multiple dom elements clockwise.
+ *
+ * Examples:
+ *
+ *   roulette(el1, el2);
+ *   roulette(el1, el2, el3);
+ *   
+ * @api public
+ */
+
+function roulette() {
+  var tmp = 0;
+  for(var l = arguments.length - 1; l > 0; l--) {
+    roulette.two(arguments[l + tmp++], arguments[l-1]);
+  }
+}
+
+
+/**
  * Switch two dom elements.
  *
  * @param {Element} el1
@@ -14,21 +33,13 @@ module.exports = roulette;
  * @api public
  */
 
-function roulette(el1, el2) {
-  for(var i = 0, l = arguments.length - 1; i < l; i++) {
-    console.log(i, i+1);
-    flip(arguments[i], arguments[i+1]);
-  }
-}
-
-
-function flip(el1, el2) {
- var anchor = document.createElement('div');
- insert(el2, anchor);
- insert(el1, el2);
- insert(anchor, el1);
- anchor.parentElement.removeChild(anchor);
-}
+roulette.two = function(el1, el2) {
+  var anchor = document.createElement('div');
+  insert(el2, anchor);
+  insert(el1, el2);
+  insert(anchor, el1);
+  anchor.parentElement.removeChild(anchor);
+};
 
 
 /**
