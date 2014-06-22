@@ -31,6 +31,7 @@ describe('switch positions', function() {
 
 	it('should switch 3 elements', function() {
 		var children = parent.children;
+		debugger
 		roulette(el1, el2, el3);
 		assert.equal(children[0], el3);
 		assert.equal(children[1], el1);
