@@ -15,19 +15,24 @@ with [nodejs](http://nodejs.org):
 
 ## Usage
  
-  roulette allows to interchange two dom elements.
+  roulette allows to interchange multiple dom elements clockwise.
 
 ```js
 var roulette = require('roulette');
+
+// two
 roulette(el1, el2);
+
+// and more
+roulette(el1, el2, el3);
 ```
 
 
 ## API
 
-### roulette(el1, el2)
+### roulette(el1, el2, [...])
 
-  switch el1 and el2 positions.
+  switch elements position.
 
 ```js
 roulette(el1, el2)
